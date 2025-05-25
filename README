@@ -1,0 +1,102 @@
+MERİÇ AYDEMİR 20230108049
+✈️ Uçak Bilet Rezervasyon Sistemi
+Bu uygulama, Java programlama dili ile geliştirilen konsol tabanlı bir uçak bileti rezervasyon sistemidir. Kullanıcı, tanımlı uçuşlar arasında seçim yaparak kendisi için koltuk rezervasyonu yapabilir. Rezervasyonlar rezervasyonlar.csv dosyasına kaydedilir.
+
+📁 Proje Yapısı
+Tüm kod tek bir dosyada (UcakBiletRezervasyon.java) bulunmaktadır. Kod içerisinde aşağıdaki ana yapılar mevcuttur:
+
+1. Model Sınıfları
+✅ Ucak
+Uçakların temel özelliklerini (model, marka, seri no ve koltuk kapasitesi) tutar.
+
+✅ Lokasyon
+Uçuşun varış noktası ile ilgili ülke, şehir, havaalanı gibi bilgileri tutar.
+
+✅ Ucus
+Her uçuş; bir lokasyon, saat, uçak ve dolu koltuk listesi ile tanımlanır. Ayrıca koltuk rezervasyonu için yardımcı metodlar içerir (yerVarMi, koltukAyir).
+
+✅ Rezervasyon
+Bir kullanıcının yaptığı rezervasyon bilgilerini (ad, soyad, yaş, telefon, TC kimlik, koltuk numarası, uçuş) içerir. Ayrıca CSV formatına uygun toString() metodu ile dosyaya yazılabilir.
+
+2. Servis Sınıfı
+⚙️ UcusServisi
+Bu sınıf, sistemin servis mantığını yürütür:
+
+Tanımlı uçuşları içerir.
+
+Rezervasyon işlemlerini yürütür (rezervasyonYap).
+
+Rezervasyonları rezervasyonlar.csv dosyasına kaydeder.
+
+Uçuşları listeler (ucuslariListele).
+
+3. Ana Metot
+🔁 main(String[] args)
+Uygulamanın giriş noktasıdır. Konsol üzerinden kullanıcıdan bilgi alır, uçuş listelerini gösterir, rezervasyon işlemini başlatır.
+
+Çalışma sırası:
+
+UcusServisi nesnesi oluşturulur ve örnek veriler yüklenir.
+
+Kullanıcıya uçuş listesi gösterilir.
+
+Kullanıcı uçuş seçer.
+
+Kullanıcıdan kişisel bilgiler alınır.
+
+Rezervasyon yapılır ve dosyaya kaydedilir.
+
+🧪 Örnek Kullanım
+bash
+Kopyala
+Düzenle
+=== Ucus Listesi ===
+1) Istanbul - 10:00 (A320)
+2) Paris - 14:30 (A320)
+3) Berlin - 16:45 (B737)
+Rezervasyon yapmak istediginiz ucus numarasini girin (0 = cikis): 2
+Adiniz: Ahmet
+Soyadiniz: Yılmaz
+Yasiniz: 27
+Telefon Numaraniz: 05551234567
+TC Kimlik Numaraniz: 12345678901
+Rezervasyon basarili! Bilgiler dosyaya kaydedildi.
+💾 Kayıt Dosyası (rezervasyonlar.csv)
+Rezervasyonlar CSV dosyası olarak aynı klasöre yazılır. Format:
+
+Kopyala
+Düzenle
+Ad,Soyad,Yas,Telefon,TC,Sehir,Saat,KoltukNo
+Örnek satır:
+
+makefile
+Kopyala
+Düzenle
+Ahmet,Yılmaz,27,05551234567,12345678901,Paris,14:30,2
+📌 Gereksinimler
+Java 8 veya üzeri
+
+Konsol/terminal erişimi
+
+🚀 Geliştirme Önerileri
+Koltuk numarası görselleştirme
+
+Rezervasyon iptal sistemi
+
+Admin paneli (uçuş ekleme, uçak değiştirme)
+
+Uçuş filtreleme (şehir, tarih)
+
+GUI versiyonu (Swing/JavaFX)
+
+👨‍💻 Derleme ve Çalıştırma
+Derlemek için:
+bash
+Kopyala
+Düzenle
+javac UcakBiletRezervasyon.java
+Çalıştırmak için:
+bash
+Kopyala
+Düzenle
+java UcakBiletRezervasyon
